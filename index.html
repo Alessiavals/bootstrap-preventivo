@@ -3,118 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap-Preventivo</title>
+    <title>Preventivo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    
+
     <!--HEADER-->
-
-    <nav class="navbar bg-dark" data-bs-theme="dark">
-        <div class="container-sm">
-          <span class="navbar-text text-light">
-            Bool Factory
-          </span>
-          <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Servizi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Contatti</a>
-            </li>
-          </ul>
+    <nav class="navbar bg-dark text-light">
+        <div class="container">
+            <span class="navbar-brand text-white">Bool Factory</span>
+            <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link text-light">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-light">Servizi</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-light">Contatti</a></li>
+            </ul>
         </div>
-      </nav>
+    </nav>
 
-     <!--MAIN FORM-->
+    <!-- MAIN CONTENT -->
+    <div class="container-sm my-5">
+        <div class="row">
+            <!-- Form Section -->
+            <div class="col-md-8">
+                <h2>Richiesta Preventivo</h2>
+                <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
 
-      <div class="container-sm my-3">
-        <h2>Richiesta preventivo</h1>
-         <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" id="name" class="form-control" placeholder="Inserisci nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="surname" class="form-label">Cognome</label>
+                        <input type="text" id="surname" class="form-control" placeholder="Inserisci cognome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Inserisci email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="jobType" class="form-label">Tipo di Lavoro</label>
+                        <select id="jobType" class="form-select">
+                            <option selected>Scegli il tipo di lavoro</option>
+                            <option value="1">Lavoro 1</option>
+                            <option value="2">Lavoro 2</option>
+                            <option value="3">Lavoro 3</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="textarea" class="form-label">Descrizione</label>
+                        <textarea id="textarea" class="form-control" rows="4" placeholder="Inserisci dettagli..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="promo" class="form-label">Codice Promozionale (opzionale)</label>
+                        <input type="text" id="promo" class="form-control" placeholder="Inserisci codice promozionale">
+                    </div>
+                    <div class="form-check mb-4">
+                        <input type="checkbox" id="privacy" class="form-check-input">
+                        <label for="privacy" class="form-check-label">Accetto la Privacy Policy</label>
+                    </div>
+                  <div class="d-flex justify-content-evenly mb-3">
+                    <button type="button" class="btn btn-primary">Calcola preventivo</button>
+                    <h3 class="mt-3">Prezzo finale: 
 
+                <!-- Price Result in D-None-->  
+                    <div class="d-none">
+                      <p id="priceResult"></p>
+                    </div>
 
-         <div class="mb-3">
-          <label for="name" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inserisci nome...">
+                  </div>
+                </form>
+            </div>
+      
+            <!-- Card Section -->
+            <div class="col-md-4">
+                <div class="card" style="width: 100%">
+                    <div class="card-body">
+                        <div style="background-color: #979797; height: 150px; display: flex; justify-content: center; align-items: center;">
+                            <h3 class="text-white">300 &times; 200</h3>
+                        </div>
+                        <h5 class="card-title mt-3">I nostri contatti</h5>
+                        <p class="card-text">Se hai bisogno di aiuto puoi contattarci:</p>
+                        <ul class="list-unstyled">
+                            <li><strong>Email:</strong> help@boolfactory.test</li>
+                            <li><strong>Telefono:</strong> +112233445</li>
+                        </ul>
+                        <a href="#" class="btn btn-link">Help Desk</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-          <label for="surname" class="form-label">Cognome</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Inserisci cognome...">
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">E-mail</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inserisci e-mail...">
-        </div>
+    </div>
 
-        <div class="mb-3">
-          <label for="jobType" class="form-label">Tipo di lavoro</label>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Scegli il tipo di lavoro</option>
-            <option value="1">Lavoro 1</option>
-            <option value="2">Lavoro 2</option>
-            <option value="3">Lavoro 3</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label for="textArea" class="form-label">Textarea con Bootstrap 5</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-
-        <div class="mb-3">
-          <label for="promo" class="form-label">Codice promozionale (opzionale)</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inserisci il codice promo...">
-        </div>
-
-        <div class=" mb-3 form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="checkBox">
-            Accetto la Privacy Policy
-          </label>
-        </div>
-
-        <div class="d-flex justify-content-evenly mb-3">
-          <button type="button" class="btn btn-primary">Calcola prezzo</button>
-            <h3>Prezzo finale</h2>
-          
-      <!--CALCOLO FINALE PREZZO -->
-
-          <div id="output" class="d-none">
-            <p id="priceResult"></p>
-          </div>
-          
-        </div>
-
-      <!--CARD-->
-
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-
-      </div>
-
-
-
-
-
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-3">
+        &copy; 2024 - Tutti i diritti riservati
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
 </body>
 </html>
