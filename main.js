@@ -18,6 +18,11 @@ const errorResult = document.getElementById('errorResult');
 // Aggiungi evento al bottone per calcolare il preventivo
 calculateBtn.addEventListener('click', function() {
 
+    // Elimina messaggi precedenti
+
+    errorResult.classList.add('d-none');
+    priceResult.classList.add('d-none');
+
     // Numero di ore predefinito
     const hours = 10;
 
@@ -36,15 +41,24 @@ calculateBtn.addEventListener('click', function() {
 
     // Verifica il codice promozionale
     const promoCode = promoCodeElement.value.trim();
-    if (promoCode && validPromoCodes.includes(promoCode)) {
-        totalPrice *= 0.75; // Applica lo sconto del 25%
-    } else if (promoCode) {
+    if (promoCode && !validPromoCodes.includes(promoCode)) {
+
         // Mostra errore per codice non valido
         errorResult.textContent = 'Errore: Codice promozionale non valido.';
         errorResult.classList.remove('d-none');
+        promoCodeElement.focus(); 
+        return
+    }
+
+    // Applica lo sconto se il codice è valido
+    if (promoCode) {
+        totalPrice *= 0.75; // Applica lo sconto del 25%
     }
 
     // Mostra il prezzo finale
     priceResult.textContent = `Prezzo finale: € ${totalPrice.toFixed(2)}`;
     priceResult.classList.remove('d-none');
 });
+
+
+
